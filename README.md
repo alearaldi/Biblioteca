@@ -1,4 +1,5 @@
 Aplicación CRUD Biblioteca en Laravel
+
 Este repositorio contiene una aplicación CRUD desarrollada en el lenguaje de programación PHP utilizando el framework Laravel. La aplicación se llama "Biblioteca" y permite gestionar libros y autores a través de operaciones básicas como crear, leer, actualizar y eliminar (CRUD). Además, se ha utilizado el framework Bootstrap para mejorar la apariencia y la usabilidad de la interfaz de usuario.
 
 Requisitos previos
