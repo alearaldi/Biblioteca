@@ -1,66 +1,62 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Aplicación CRUD Biblioteca en Laravel
+Este repositorio contiene una aplicación CRUD desarrollada en el lenguaje de programación PHP utilizando el framework Laravel. La aplicación se llama "Biblioteca" y permite gestionar libros y autores a través de operaciones básicas como crear, leer, actualizar y eliminar (CRUD). Además, se ha utilizado el framework Bootstrap para mejorar la apariencia y la usabilidad de la interfaz de usuario.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Requisitos previos
+Antes de comenzar con la instalación local del proyecto, asegúrate de tener instalados los siguientes componentes en tu sistema:
 
-## About Laravel
+Docker: La aplicación utiliza Docker para crear un entorno de desarrollo consistente y aislado.
+Instrucciones de instalación
+Sigue los pasos a continuación para configurar y ejecutar la aplicación de Biblioteca en tu entorno local:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Clona el repositorio: Abre una terminal y ejecuta el siguiente comando para clonar este repositorio en tu máquina:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+bash
+Copy code
+git clone https://github.com/tuusuario/biblioteca-laravel.git
+Accede al directorio del proyecto: Navega al directorio recién clonado:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+bash
+Copy code
+cd biblioteca-laravel
+Configuración del entorno: Duplica el archivo .env.example y renómbralo a .env. Luego, configura las variables de entorno necesarias, como la configuración de la base de datos:
 
-## Learning Laravel
+bash
+Copy code
+cp .env.example .env
+Levanta el contenedor Docker: Ejecuta el siguiente comando para construir y ejecutar el contenedor Docker:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+bash
+Copy code
+docker-compose up -d
+Instala las dependencias de PHP: Accede al contenedor Docker en el que se encuentra la aplicación:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+bash
+Copy code
+docker-compose exec app bash
+Luego, dentro del contenedor, instala las dependencias de PHP:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+bash
+Copy code
+composer install
+Genera la clave de la aplicación: Aún dentro del contenedor, genera una clave única para la aplicación Laravel:
 
-## Laravel Sponsors
+bash
+Copy code
+php artisan key:generate
+Ejecuta las migraciones: Ejecuta las migraciones para crear las tablas necesarias en la base de datos:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+bash
+Copy code
+php artisan migrate
+Accede a la aplicación: Abre tu navegador web y visita http://localhost:8000 para acceder a la aplicación Biblioteca.
 
-### Premium Partners
+Uso de la aplicación
+Una vez que hayas completado los pasos de instalación, podrás utilizar la aplicación para realizar operaciones CRUD en la gestión de libros y autores. Explora las diferentes funciones y disfruta de la experiencia de gestión de una biblioteca en línea.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Créditos
+Esta aplicación ha sido desarrollada utilizando el framework Laravel y el framework Bootstrap para los estilos.
 
-## Contributing
+Licencia
+Este proyecto se encuentra bajo la Licencia MIT. Puedes modificarlo y distribuirlo según tus necesidades.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+¡Disfruta utilizando la aplicación Biblioteca en Laravel! Si tienes alguna pregunta o problema, no dudes en crear un issue en este repositorio.
