@@ -57,8 +57,9 @@ class LibroController extends Controller
     /**
      * Borra Libro
      */
-    public function destroy($id)
+    public function destroy(Libro $libro)
     {
-
+        $libro->delete();
+        return response()->noContent();
     }
 }
