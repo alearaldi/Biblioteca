@@ -14,17 +14,11 @@ class LibroController extends Controller
      * Da una lista de los libros cargados
      */
     public function index(Request $request)
-    {
-        // Si se espera una solicitud API, devuelvo JSON con los datos que quiero mostrar
-        if ($request->expectsJson()) {
-            $libros = Libro::select('isbn', 'title', 'author', 'price', 'publicationDate', 'gender')->get();  // aca puedo paginar de a 5 registros con paginate(5)
-            return response()->json($libros);
-
-        } else {
+    { 
             // Si no se espera JSON, mostrar la vista con su paginación
             $libros = Libro::latest()->paginate(5);
             return view('libros.index', compact('libros'))->with('i', (request()->input('page', 1) - 1) * 5);
-        }
+       
     }
   
     /**
