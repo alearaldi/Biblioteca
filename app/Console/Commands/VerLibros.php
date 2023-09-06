@@ -19,27 +19,27 @@ class VerLibros extends Command
         $libros = Libro::all();
 
         if ($libros->isEmpty()) {
-            $this->info('No hay libros para mostrar.');
-            return Command::SUCCESS;
+            $this->error('No hay libros para mostrar.');
+            return;
         }
 
         // Preparar los datos para la tabla
         $data = [];
         foreach ($libros as $libro) {
             $data[] = [
+                'ID' => $libro->id,
                 'ISBN' => $libro->isbn,
                 'Titulo' => $libro->title,
                 'Autor' => $libro->author,
                 'Precio' => $libro->price,
-                'Fecha de Publicación' => $libro->publicacionDate,
+                'Fecha de Publicación' => $libro->publicationDate,
                 'Genero' => $libro->gender,
             ];
         }
 
         // Mostrar la tabla en la consola
-        $this->table(['ISBN', 'Título', 'Autor', 'Precio', 'Fecha de Publicación', 'Género'], $data);
+        $this->table(['ID', 'ISBN', 'Título', 'Autor', 'Precio', 'Fecha de Publicación', 'Género'], $data);
 
-        return Command::SUCCESS;
     }
 
 }

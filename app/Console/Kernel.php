@@ -15,6 +15,9 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         'App\Console\Commands\VerLibros',
+        'App\Console\Commands\BorrarLibro',
+        'App\Console\Commands\ActualizarLibro',
+        'App\Console\Commands\AgregarLibro',
     ];
     /**
      * Define the application's command schedule.
