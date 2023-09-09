@@ -42,14 +42,14 @@ class LibroController extends Controller
     public function update(UpdateLibroRequest $request, Libro $libro)
     {
         $data = $request->validate([
-            'isbn' => 'required|unique:libros,isbn,' . $libro->id,
+            'isbn' => 'required',
             'title' => 'required',
             'author' => 'required',
             'price' => 'required',
             'publicationDate' => 'required',
             'gender' => 'required'
         ]);
-    
+
         $libro->update($data);
         return LibroResource::make($libro);
     }

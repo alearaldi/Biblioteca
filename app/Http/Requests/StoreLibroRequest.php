@@ -22,7 +22,7 @@ class StoreLibroRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'isbn' => 'required|unique:libros,isbn',
+            'isbn' => 'required',
             'title' => 'required',
             'author' => 'required',
             'price' => 'required',
