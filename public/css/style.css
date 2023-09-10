@@ -1,0 +1,12 @@
+.form-control {
+  flex-direction: row-reverse !important;
+}
+.alert {
+  grid-auto-flow: dense !important;
+  grid-template-columns: auto !important;
+  justify-items: center !important;
+  text-align: center !important;
+}
+.w-80 {
+  width: 30% !important;
+}
