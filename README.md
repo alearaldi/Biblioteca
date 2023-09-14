@@ -37,7 +37,9 @@ Ejecuta las migraciones: Ejecuta las migraciones para crear las tablas necesaria
 
 php artisan migrate
 
-Accede a la aplicación: Abre tu navegador web y visita http://localhost:{El puerto depende de tu configuracion} para acceder a la aplicación Biblioteca.
+luego correr npm run dev
+
+Accede a la aplicación: Abre tu navegador web y visita http://localhost: {El puerto depende de tu configuracion} para acceder a la aplicación Biblioteca.
 
 Uso de la aplicación
 Una vez que hayas completado los pasos de instalación, podrás utilizar la aplicación para realizar operaciones CRUD en la gestión de libros. 
@@ -99,7 +101,6 @@ php artisan agregarlibro "976" "El señor de los anillos" "Ale Araldi" "987.78" 
 ACTUALIZAR LIBRO:
 Ej de como actualizar solo el titulo, el primer parametro es el id del libro que desea actualizar:
 php artisan actualizarlibro 10 "" "Ale Araldi" ( Dejamos libre el primer parametro ya que es el isbn y no lo queremos cambiar )
-
 
 
 Créditos
