@@ -22,6 +22,14 @@ class AgregarLibro extends Command
       $price = $this->argument('price');
       $publicationDate = $this->argument('publicationDate');
       $gender = $this->argument('gender');
+
+      // si el isbn ya existe mostrar emnsaje de error
+      $libro = Libro::where('isbn', $isbn)->first();
+      if ($libro) {
+        $this->error('El isbn ya existe.');
+        return;
+      }
+      // le meto todo dentro de la tabla
       $libro = new Libro();
       $libro->isbn = $isbn;
       $libro->title = $title;

@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateLibroRequest;
 use App\Http\Resources\LibroResource;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
   
 class LibroController extends Controller
 {
