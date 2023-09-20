@@ -29,7 +29,13 @@ class ActualizarLibro extends Command
       $price = $this->argument('price');
       $publicationDate = $this->argument('publicationDate');
       $gender = $this->argument('gender');
-
+   
+      $libro = Libro::where('isbn', $isbn)->first();
+      if ($libro) {
+        $this->error('El isbn ya existe.');
+        return;
+      }
+      
       if ($isbn) {$libro->isbn = $isbn;}
       if ($title) {$libro->title = $title;}
       if ($author) {$libro->author = $author;}
